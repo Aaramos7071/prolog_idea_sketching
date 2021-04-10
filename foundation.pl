@@ -1,76 +1,74 @@
-/*******************************************/
-/* Creating some basic facts that are      */
-/* sufficiently concrete enough to express */
-/* real-world problems.                    */
-/*******************************************/
+/********************************************/
+/* Creating some facts that are suffiently  */
+/* concrete enough to express real-world    */
+/* problems.                                */
+/*                                          */
+/* EDITOR NOTES: I had to go from storing   */
+/* every atom in a list to storing them in  */
+/* in their own functor.  My reasoning is   */
+/* the need to update the database without  */
+/* having to open the editor when new atoms */
+/* are stored.                              */
+/********************************************/
 
-
-direction(X):- member(X,[up,
-                         down,
-                         left,
-                         right
-                        ]).
+direction(up).
+direction(down).
+direction(left).
+direction(right).
 
 direction(X,Y) :- direction(X),direction(Y).
 
-shape_2d(X) :- member(X,[square,
-                       circle,
-                       rectangle,
-                       triangle,
-                       oval
-                    ]).
 
-shape_3d(X) :- member(X,[cube,
-                          sphere,
-                          pyramid,
-                          cone,
-                          block
-                       ]).
+shape_2d(square).
+shape_2d(circle).
+shape_2d(rectangle).
+shape_2d(triangle).
+shape_2d(oval).
+
+shape_3d(cube).
+shape_3d(sphere).
+shape_3d(pyramid).
+shape_3d(cone).
+shape_3d(block).
 
 shape(X) :- shape_2d(X); shape_3d(X).
 
-liquid(X) :- member(X,[water,
-                       gasoline,
-                       oil,
-                       bleach,
-                       milk,
-                       soap
-                    ]).
+liquid(water).
+liquid(gasoline).
+liquid(oil).
+liquid(bleach).
+liquid(milk).
+liquid(soap).
 
-animal(X) :- member(X,[cat,
-                       dog,
-                       lizard,
-                       goat,
-                       chicken,
-                       hamster,
-                       pig,
-                       alpaca,
-                       hawk,
-                       pigeon,
-                       sea_gull,
-                       pelican,
-                       flamingo
-                     ]).
+animal(cat).
+animal(dog).
+animal(lizard).
+animal(goat).
+animal(chicken).
+animal(hamster).
+animal(pig).
+animal(alpaca).
+animal(hawk).
+animal(pigeon).
+animal(sea_gull).
+animal(pelican).
+animal(flamingo).
 
-color_rbg(X) :- member(X, [red,
-                       blue,
-                       green
-                   ]).
+color_rbg(red).
+color_rbg(blue).
+color_rbg(green).
 
-color(X) :- member(X,[black,
-                      white,
-                      grey,
-                      green,
-                      blue,
-                      red,
-                      orange,
-                      purple,
-                      pink
-                   ]).
+color(black).
+color(white).
+color(grey).
+color(green).
+color(blue).
+color(red).
+color(orange).
+color(purple).
+color(pink).
 
 color_contrast(light).
-color_contrast(dark).
-
-
+color_contrast(dark).S
 
 
